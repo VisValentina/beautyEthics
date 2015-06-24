@@ -1,0 +1,83 @@
+body {
+	margin: 0;
+	background-color: black;
+}
+
+/* FOR THE LOGIN */
+.login {
+	text-align: center;
+	margin-top: 40px;
+}
+
+.login a {
+	color: #858584;
+	font-family: 'Raleway', sans-serif;
+	font-size: 13px;
+	letter-spacing: 2px;
+	margin-right: 40px;
+}
+
+.logo {
+	position: fixed;
+  top: 40%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+}
+}
+/* FOR THE INDEX */
+.container {
+	height: 100%;
+}
+
+.homeDiv {
+	width: 25%;
+	background-color: black;
+	height: 250px;
+	display: inline;
+	float: left;
+	background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.homeSpacer {
+	width: 100%;
+	background-color: black;
+	height: 225px;
+	float: left;
+}
+
+.homeSpacer img {
+	width: 170px;
+	text-align: center;
+}
+
+.homeSpacer div {
+	position: relative;
+  top: 55%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+}
+
+#homeAboutLink {
+	color: #777777;	
+	position: relative;
+	float: right;
+	left: -30px;
+	top: 160px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 11px;
+	letter-spacing: 2px
+}
+
+#homeLogoutLink {
+	color: #777777;	
+	position: relative;
+	float: right;
+	left: -70px;
+	top: 160px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 11px;
+	letter-spacing: 2px
+}
