@@ -1,6 +1,7 @@
 body {
 	margin: 0;
 	background-color: black;
+	overflow-x: hidden;
 }
 
 /* FOR THE LOGIN */
@@ -52,12 +53,14 @@ body {
 	text-align: center;
 }
 
-.homeSpacer div {
-	position: relative;
-  top: 55%;
-  left: 50%;
-  margin-top: -50px;
-  margin-left: -100px;
+.homeSpacerLogo {
+/*	position: relative;*/
+  top: 30%;
+/*  left: 50%;*/
+/*  margin-top: -50px;
+  margin-left: -100px;*/
+  margin-top: 65px;
+  text-align: center;
 }
 
 #homeAboutLink {
@@ -65,7 +68,7 @@ body {
 	position: relative;
 	float: right;
 	left: -30px;
-	top: 160px;
+	top: 50px;
 	font-family: 'Raleway', sans-serif;
 	font-size: 11px;
 	letter-spacing: 2px
@@ -76,8 +79,34 @@ body {
 	position: relative;
 	float: right;
 	left: -70px;
-	top: 160px;
+	top: 50px;
 	font-family: 'Raleway', sans-serif;
 	font-size: 11px;
 	letter-spacing: 2px
+}
+
+.aboutText {
+	color: white;
+	position: relative;
+	top: 48px;
+	width: 42%;
+	margin: 0 auto;
+	min-width: 556px;
+	display: none;
+}
+
+p {
+	font-family: 'Raleway', sans-serif;
+	line-height:	1.6;
+	letter-spacing: 1.5px;
+	font-size: 13px
+}
+
+p .dropCap {
+	font-family: 'Amiri', serif;
+  font-style: italic;
+  font-size: 50px;
+  float: left;
+  line-height: 40px;
+  padding-right: 8px;
 }

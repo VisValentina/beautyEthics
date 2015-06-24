@@ -27,8 +27,8 @@ var express = require('express'),
 		}));
 
 		// Instagram Passport Setup
-		var INSTAGRAM_CLIENT_ID = "TOP SECRET";
-		var INSTAGRAM_CLIENT_SECRET = "TOP SECRET";
+		var INSTAGRAM_CLIENT_ID = "SECRET";
+		var INSTAGRAM_CLIENT_SECRET = "SECRET";
 
 		// Passport will maintain persistent login sessions.
 		// In order for persistent sessions to work, the authenticated user must be serialized to the session, and deserialized when subsequent requests are made.
@@ -49,7 +49,7 @@ var express = require('express'),
 	passport.use(new InstagramStrategy({
     clientID: INSTAGRAM_CLIENT_ID,
     clientSecret: INSTAGRAM_CLIENT_SECRET,
-    callbackURL: "TOP SECRET"
+    callbackURL: "SECRET"
   },
   function(accessToken, refreshToken, profile, done) {
     // asynchronous verification, for effect...
