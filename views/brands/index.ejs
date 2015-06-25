@@ -1,30 +1,51 @@
 <% include ../partials/header %>
 
 <div class="container">
-	<div class="homeDiv" style="background-image: url('<%= images[0]%>')"></div>
-	<div class="homeDiv" style="background-image: url('<%= images[1]%>')"></div>
-	<div class="homeDiv" style="background-image: url('<%= images[2]%>')"></div>
-	<div class="homeDiv" style="background-image: url('<%= images[3]%>')"></div>
+	<div class="homeDiv" style="background-image: url('<%= images[0].imgData%>')" data-name="<%= images[0].instaName%>" data-complaint="<%= images[0].complaint%>"></div>
+	<div class="homeDiv" style="background-image: url('<%= images[1].imgData%>')" data-name="<%= images[1].instaName%>" data-complaint="<%= images[1].complaint%>"></div>
+	<div class="homeDiv" style="background-image: url('<%= images[2].imgData%>')" data-name="<%= images[2].instaName%>" data-complaint="<%= images[2].complaint%>"></div>
+	<div class="homeDiv" style="background-image: url('<%= images[3].imgData%>')" data-name="<%= images[3].instaName%>" data-complaint="<%= images[3].complaint%>"></div>
 
 	<div class="homeSpacer">
 		<div class="homeSpacerLogo">
 			<img src="images/logo_1.png" alt="Beauty Ethics" id="homeLogo">
 		</div>
+
 		<a id="homeAboutLink" data-info="null">ABOUT</a>
 		<a id="homeLogoutLink">LOGOUT</a>
 
-<div class="aboutText">
-	<p><span class="dropCap">B</span>eauty Ethics is built through data compiled from the good shopping guide, which promotes ethical shopping and business in support of a more sustainable world. All images are collected live via instagram from the most unethical and contested skincare and fashion company giants. We ask viewers to be aware of the ugly side in the beauty industry. 
-	</p>
-</div>
+		<div class="aboutText">
+			<p><span class="dropCap">B</span>eauty Ethics is built through data compiled from the good shopping guide, which promotes ethical shopping and business in support of a more sustainable world. All images are collected live via instagram from the most unethical and contested skincare and fashion company giants. We ask viewers to be aware of the ugly side in the beauty industry. 
+			</p>
+		</div>
 
-
+		<div class="hoverInfo">
+			<p id="garnierusa">@garnierusa</p>
+			<p id="kiehlsnyc">@kiehlsnyc</p>
+			<p id="lorealparisofficial">@lorealparisofficial</p>
+			<p id="cleanandclear">@cleanandclear</p>
+			<p id="lorealparisusa">@lorealparisusa</p>
+			<p id="lorealparisfr">@lorealparisfr</p>
+			<p id="johnfriedauk">@johnfriedauk</p>
+			<p id="johnfriedafr">@johnfriedafr</p>
+			<p id="tresemme">@tresemme</p>
+			<p id="superdrugloves">@superdrugloves</p>
+			<p id="aussiehair">@aussiehair</p>
+			<p id="herbalessences">@herbalessences</p>
+			<p id="pantenehair">@pantenehair</p>
+			<p id="nivea_de">@nivea_de</p>
+			<p id="neutrogena">@neutrogena</p>
+		</div>
 	</div>
 
-	<div class="homeDiv" style="background-image: url('<%= images[4]%>')"></div>
-	<div class="homeDiv" style="background-image: url('<%= images[5]%>')"></div>
-	<div class="homeDiv" style="background-image: url('<%= images[6]%>')"></div>
-	<div class="homeDiv" style="background-image: url('<%= images[7]%>')"></div>
+	<div class="homeDiv" style="background-image: url('<%= images[4].imgData%>')" data-name="<%= images[4].instaName%>" data-complaint="<%= images[4].complaint%>"></div>
+	<div class="homeDiv" style="background-image: url('<%= images[5].imgData%>')" data-name="<%= images[5].instaName%>" data-complaint="<%= images[5].complaint%>"></div>
+	<div class="homeDiv" style="background-image: url('<%= images[6].imgData%>')" data-name="<%= images[6].instaName%>" data-complaint="<%= images[6].complaint%>"></div>
+	<div class="homeDiv" style="background-image: url('<%= images[7].imgData%>')" data-name="<%= images[7].instaName%>" data-complaint="<%= images[7].complaint%>"></div>
+
+	<div class="blackHide">
+	</div>
+	
 </div>
 
 <%= images[0]%>

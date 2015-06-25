@@ -1,10 +1,11 @@
 var mongoose = require("mongoose");
 
 var brandSchema = new mongoose.Schema({
-  name: String,
-  instagramName: String,
-  image: String,
-  owner: String
+  instaName: String,
+  instaId: Number,
+  complaint: String,
+  owner: String,
+  score: Number
 });
 
 var Brand = mongoose.model("Brand", brandSchema);

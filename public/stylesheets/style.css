@@ -110,3 +110,32 @@ p .dropCap {
   line-height: 40px;
   padding-right: 8px;
 }
+
+.hoverInfo {
+	color: white;
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	line-height:	1.6;
+	letter-spacing: 1.5px;
+	font-size: 13px;
+	top: -50px;
+	position: relative;
+}
+
+.hoverInfo p {
+	position:	absolute;
+	width: 100%;
+	margin: 0 auto;
+	display: none;
+	z-index: 9;
+}
+
+.blackHide {
+	display: none;
+	width: 179px;
+	height: 69px;
+	background-color: black;
+	position: relative;
+	top: 310px;
+	margin: auto;
+}

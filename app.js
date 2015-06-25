@@ -70,8 +70,8 @@ var express = require('express'),
   	app.use(passport.session());
 
     // *************** BRAND INFO ***************//
-    var brandIds = [196766934, 448044564, 1323766664, 887391878, 182211878, 18977415, 326928838, 144140774, 260742208, 1385709710, 459676149, 145628278, 19262530, 469275009, 1273842973];
-
+    // var brandIds = [196766934, 448044564, 1323766664, 887391878, 182211878, 18977415, 326928838, 144140774, 260742208, 1385709710, 459676149, 145628278, 19262530, 469275009, 1273842973];
+    var brandIds;
 
 		// *************** DEAL WITH LOGIN AND SIGNUP ***************//
 
@@ -117,24 +117,31 @@ var express = require('express'),
         }
         // !!! Add data-attribute tag and list the brand-data name for it, that way we can extract it in the front end JS
         var brandData = JSON.parse(body).data[0];
+        var instaName = brandData.user.username;
         var imgData = brandData.images.standard_resolution.url;
-        responseArr.push(imgData);
+        var complaint;
+
+        brandIds.forEach(function(el){
+          if(el.instaName === '@' + instaName) {
+            complaint = el.complaint;
+          }
+        });
+        responseArr.push({imgData: imgData, instaName: instaName, complaint: complaint});
         if (responseCount === 8) {
           res.render('brands/index', {images: responseArr});
         }
       };
       shuffle(brandIds);
-      console.log(brandIds);
 	    // console.log(req.user);
       // Now we make an api request for the brand images from Instagram
-      request.get("https://api.instagram.com/v1/users/" + brandIds[0] + "/media/recent/?access_token=" + req.user.accessToken, handleResponses);
-      request.get("https://api.instagram.com/v1/users/" + brandIds[1] + "/media/recent/?access_token=" + req.user.accessToken, handleResponses);
-      request.get("https://api.instagram.com/v1/users/" + brandIds[2] + "/media/recent/?access_token=" + req.user.accessToken, handleResponses);
-      request.get("https://api.instagram.com/v1/users/" + brandIds[3] + "/media/recent/?access_token=" + req.user.accessToken, handleResponses);
-      request.get("https://api.instagram.com/v1/users/" + brandIds[4] + "/media/recent/?access_token=" + req.user.accessToken, handleResponses);
-      request.get("https://api.instagram.com/v1/users/" + brandIds[5] + "/media/recent/?access_token=" + req.user.accessToken, handleResponses);
-      request.get("https://api.instagram.com/v1/users/" + brandIds[6] + "/media/recent/?access_token=" + req.user.accessToken, handleResponses);
-      request.get("https://api.instagram.com/v1/users/" + brandIds[7] + "/media/recent/?access_token=" + req.user.accessToken, handleResponses);
+      request.get("https://api.instagram.com/v1/users/" + brandIds[0].instaId + "/media/recent/?access_token=" + req.user.accessToken, handleResponses);
+      request.get("https://api.instagram.com/v1/users/" + brandIds[1].instaId + "/media/recent/?access_token=" + req.user.accessToken, handleResponses);
+      request.get("https://api.instagram.com/v1/users/" + brandIds[2].instaId + "/media/recent/?access_token=" + req.user.accessToken, handleResponses);
+      request.get("https://api.instagram.com/v1/users/" + brandIds[3].instaId + "/media/recent/?access_token=" + req.user.accessToken, handleResponses);
+      request.get("https://api.instagram.com/v1/users/" + brandIds[4].instaId + "/media/recent/?access_token=" + req.user.accessToken, handleResponses);
+      request.get("https://api.instagram.com/v1/users/" + brandIds[5].instaId + "/media/recent/?access_token=" + req.user.accessToken, handleResponses);
+      request.get("https://api.instagram.com/v1/users/" + brandIds[6].instaId + "/media/recent/?access_token=" + req.user.accessToken, handleResponses);
+      request.get("https://api.instagram.com/v1/users/" + brandIds[7].instaId + "/media/recent/?access_token=" + req.user.accessToken, handleResponses);
 	  });
 
 
@@ -157,4 +164,15 @@ app.get('*', function(req,res){
 
 app.listen(3000, function(){
   console.log("Server is listening on port 3000");
+
+  db.Brand.find({}, function(error, data){
+    brandIds = data;
+    console.log(brandIds);
+  });
+  // db.Brand.find({}, "instaId", function(error, data){
+  //   data.forEach(function(instaId) {
+  //     // brandIds.push(instaId["instaId"]);
+  //     brandIds.push(instaId);
+  //   });
+    // console.log(brandIds);
 });
