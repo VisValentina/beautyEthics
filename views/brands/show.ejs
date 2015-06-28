@@ -1,5 +1,59 @@
 <% include ../partials/header %>
+<!-- quick little script to get the image we click on in the show page and set it as the background image -->
+<script src = "/js/getimagedata.js" type="text/javascript"></script>	
+<body class="vp-1 alt">
 
-<h1>I AM THE SHOW PAGE</h1>
+<main role="main">
+	<header class="shorter">
+		
+		<div class="homeTopLeft">
+			<p>
+				<a href="/brands">HOME</a>
+			</p>
+		</div>
+
+		<div class ="bottomRight">
+		<span>Citations:</br><span>GMO's</br>Animal Welfare</br>Toxic Ingredients</br>4 Past Boycotts</br>1 Current Boycott</span><span>
+		</div>
+
+		<h1 class="scoreText">ETHICAL SCORE:</br><span class="bigScore"><%= company.score%></span>
+		<span class="smallScore"> of 100 </span></br><span id="instaName"></span>	
+		</h1>
+
+	</header>
+	<article>
+	<p>L’Oreal is the world’s largest beauty products company. It manufactures cosmetics, perfume, and hair and skin care items. It has been the target of numerous campaigns over its continued use of animal testing and is 30% owned by Nestle. The company is the subject of a boycott call from Uncaged, again over animal testing.</p>
+	<p>It is also heavily involved in nanotechnology and is the top nanotechnology patent-holder in the United States. The company also has operations in 11 oppressive regimes and 4 tax havens. L’Oréal also owns the Body Shop. This subsidiary scores well for its own policies but still receives a low ethiscore as it picks up marks from both L’Oréal and Nestlé.</p>
+	<p>Despite the fact that animal tests for cosmetics ended in the United Kingdom in 1997, and have been banned by law across the European Union since 2009, laboratory animal suffering for the beauty industry still continues. In laboratories in countries such as China, the United States, India and Russia, cosmetic chemicals are still being rubbed onto the sensitive and shaved skin of guinea pigs, dripped into the eyes of rabbits and force-fed into rats’ stomachs.</p>
+	<p>These tests can last for days, weeks or even months. In some countries even the widely condemned “lethal dose” test is still used, in which animals are forced to swallow massive amounts of a cosmetic chemical to find out the dose that causes death. Tests like these can cause immense suffering and distress – and are increasingly seen as a poor predictor of toxicity in humans.</p>
+	<p>Across Europe, animal testing for cosmetics is banned under the EU’s Cosmetics Directive, but cosmetics companies can still test on animals in other countries and sell those products back to the EU market. The same EU Cosmetics Directive was written to contain a sales ban on the sale of cosmetics containing ingredients tested on animals in non-EU countries Originally due for implementation in 1998 and despite being passed as law, its implementation has continually been delayed.</p>
+	<p>Cosmetics companies can stop animal testing immediately and still produce new, safe and exciting beauty products by manufacturing the cruelty-free way.Firstly, companies can use ingredients that are already known to be safe, of which there are thousands. These ingredients don’t require any new testing. Secondly, if companies need to produce new data about an ingredient, they can use available non-animal test methods.</p>
+	<p>More than 40 non-animal tests have been validated for use such as EPISKIN, EpiDerm and SkinEthic and the 3T3 neutral red uptake test. These modern alternatives can offer results that are more relevant to people, often more cheaply and efficiently too.</p>
+	<p>Leaving animal tested cosmetics on the shop shelf is one of the simplest ways you can support the Be Cruelty-Free campaign. However, there are lots of animal testing claims out there, so it can be confusing for consumers to make sense of it all. Statements like “against animal testing” could simply indicate a corporate aspiration rather than a cast-iron commitment, and a label stating that “this product has not been tested on animals” could be hiding the fact that some or all of the product’s ingredients have been animal tested even if the final product hasn’t been.</p>
+	<p>One of the best ways to cut through the myriad claims is to buy cosmetics from companies whose commitment you can trust, such as those certified by the Leaping Bunny Global Shopping Guide.</p>
+
+	</article>
+	<footer>
+	<p><span class="footerHeading">Resources used include:</span></p>
+	<p><a href ="http://www.ethicalconsumer.org/ethicalreports/cosmeticstoiletriesspecialreport/companyprofiles.aspx">The Ethical Consumer Organization</a></p>
+	<p><a href ="http://www.ethicalconsumer.org/portals/0/downloads/ethicalconsumer_cosmetics_report.pdf">The Ethical Consumer Guide</a></p>
+	<p><a href ="http://www.thegoodshoppingguide.com/ethical-health-and-beauty/">The Good Shopping Guide</a></p>
+
+	</footer>
+</main>
+
+<!-- <a id="backgroundImageLink">
+	<div id="backgroundImage">
+
+			<h1>I AM THE SHOW PAGE FOR: </h1>
+			<h1>Company:<%= company.name%></h1>
+			<h1 id="instaName"></h1>
+			<h1>Score of: <%= company.score%></h1>
+
+	</div>
+</a> -->
+
+<!-- <div class="overlay">
+</div> -->
 
 <% include ../partials/footer %>

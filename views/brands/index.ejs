@@ -1,18 +1,36 @@
 <% include ../partials/header %>
+<body>
 
 <div class="container">
-	<div class="homeDiv" style="background-image: url('<%= images[0].imgData%>')" data-name="<%= images[0].instaName%>" data-complaint="<%= images[0].complaint%>"></div>
-	<div class="homeDiv" style="background-image: url('<%= images[1].imgData%>')" data-name="<%= images[1].instaName%>" data-complaint="<%= images[1].complaint%>"></div>
-	<div class="homeDiv" style="background-image: url('<%= images[2].imgData%>')" data-name="<%= images[2].instaName%>" data-complaint="<%= images[2].complaint%>"></div>
-	<div class="homeDiv" style="background-image: url('<%= images[3].imgData%>')" data-name="<%= images[3].instaName%>" data-complaint="<%= images[3].complaint%>"></div>
 
+<!-- Div 1 -->
+<a href="/brands/<%= images[0].ownerNum%>">
+	<div class="homeDiv" style="background-image: url(<%= images[0].imgData%>)" data-name="<%= images[0].instaName%>" data-complaint="<%= images[0].complaint%>" data-link="<%= images[0].instaLink%>"></div>
+</a>
+
+<!-- Div 2 -->
+<a href="/brands/<%= images[1].ownerNum%>">
+	<div class="homeDiv" style="background-image: url('<%= images[1].imgData%>')" data-name="<%= images[1].instaName%>" data-complaint="<%= images[1].complaint%>" data-link="<%= images[1].instaLink%>"></div>
+</a>
+
+<!-- Div 3 -->
+<a href="/brands/<%= images[2].ownerNum%>">
+	<div class="homeDiv" style="background-image: url('<%= images[2].imgData%>')" data-name="<%= images[2].instaName%>" data-complaint="<%= images[2].complaint%>" data-link="<%= images[2].instaLink%>"></div>
+</a>
+
+<!-- Div 4 -->
+<a href="/brands/<%= images[3].ownerNum%>">
+	<div class="homeDiv" style="background-image: url('<%= images[3].imgData%>')" data-name="<%= images[3].instaName%>" data-complaint="<%= images[3].complaint%>" data-link="<%= images[3].instaLink%>"></div>
+</a>
+
+<!-- Black Spacer -->
 	<div class="homeSpacer">
 		<div class="homeSpacerLogo">
-			<img src="images/logo_1.png" alt="Beauty Ethics" id="homeLogo">
+			<img src="/images/logo_1.png" alt="Beauty Ethics" id="homeLogo">
 		</div>
 
 		<a id="homeAboutLink" data-info="null">ABOUT</a>
-		<a id="homeLogoutLink">LOGOUT</a>
+		<a href="/logout" id="homeLogoutLink">LOGOUT</a>
 
 		<div class="aboutText">
 			<p><span class="dropCap">B</span>eauty Ethics is built through data compiled from the good shopping guide, which promotes ethical shopping and business in support of a more sustainable world. All images are collected live via instagram from the most unethical and contested skincare and fashion company giants. We ask viewers to be aware of the ugly side in the beauty industry. 
@@ -37,11 +55,27 @@
 			<p id="neutrogena">@neutrogena</p>
 		</div>
 	</div>
+<!-- End Black Spacer -->
 
-	<div class="homeDiv" style="background-image: url('<%= images[4].imgData%>')" data-name="<%= images[4].instaName%>" data-complaint="<%= images[4].complaint%>"></div>
-	<div class="homeDiv" style="background-image: url('<%= images[5].imgData%>')" data-name="<%= images[5].instaName%>" data-complaint="<%= images[5].complaint%>"></div>
-	<div class="homeDiv" style="background-image: url('<%= images[6].imgData%>')" data-name="<%= images[6].instaName%>" data-complaint="<%= images[6].complaint%>"></div>
-	<div class="homeDiv" style="background-image: url('<%= images[7].imgData%>')" data-name="<%= images[7].instaName%>" data-complaint="<%= images[7].complaint%>"></div>
+<!-- Div 5 -->
+<a href="/brands/<%= images[4].ownerNum%>">
+	<div class="homeDiv" style="background-image: url('<%= images[4].imgData%>')" data-name="<%= images[4].instaName%>" data-complaint="<%= images[4].complaint%>" data-link="<%= images[4].instaLink%>"></div>
+</a>
+
+<!-- Div 6 -->
+<a href="/brands/<%= images[5].ownerNum%>">
+	<div class="homeDiv" style="background-image: url('<%= images[5].imgData%>')" data-name="<%= images[5].instaName%>" data-complaint="<%= images[5].complaint%>" data-link="<%= images[5].instaLink%>"></div>
+</a>
+
+<!-- Div 7 -->
+<a href="/brands/<%= images[6].ownerNum%>">
+	<div class="homeDiv" style="background-image: url('<%= images[6].imgData%>')" data-name="<%= images[6].instaName%>" data-complaint="<%= images[6].complaint%>" data-link="<%= images[6].instaLink%>"></div>
+</a>
+
+	<!-- Div 8 -->
+<a href="/brands/<%= images[7].ownerNum%>">
+	<div class="homeDiv" style="background-image: url('<%= images[7].imgData%>')" data-name="<%= images[7].instaName%>" data-complaint="<%= images[7].complaint%>" data-link="<%= images[7].instaLink%>"></div>
+</a>
 
 	<div class="blackHide">
 	</div>

@@ -39,9 +39,12 @@ $(function() {
 
 	// If user hovers over any of the images, that image's instagram name will appear on the spacer div
 	var formerImage;
+	var compName;
+	var instaLink;
 
 	$('.homeDiv').on("mouseenter", function(event){
-		var compName = ($(this).attr('data-name'));
+		compName = ($(this).attr('data-name'));
+		instaLink = ($(this).attr('data-link'));
 		var queryThis = "#" + compName.toString();
 		formerImage = $(this).css('background-image');
 		$('.blackHide').show();
@@ -57,24 +60,32 @@ $(function() {
 	});
 
 		var isComplaint = function(homeDiv){
-			var animalImgs = ["url(images/Animal_1.jpg)", "url(images/Animal_2.jpg)", "url(images/Animal_3.jpg)"];
+			var animalImgs = ["url(/images/Animal_1.jpg)", "url(/images/Animal_2.jpg)", "url(/images/Animal_3.jpg)"];
   		var rando = Math.random() * 3;
   		rando = Math.floor(rando);
 			if(homeDiv.attr('data-complaint') ===  'Environment'){
-				return homeDiv.css("background-image", "url(images/Environment_1.jpg)");
-			}
+				return homeDiv.css("background-image", "url(/images/Environment_1.jpg)");
+			}	
 			else if(homeDiv.attr('data-complaint') ===  'GM'){
-				return homeDiv.css("background-image", "url(images/GM.jpg)");
+				return homeDiv.css("background-image", "url(/images/GM.jpg)");
 			}
 			else if(homeDiv.attr('data-complaint') ===  'Bribes'){
-				return homeDiv.css("background-image", "url(images/Bribes.jpg)");
+				return homeDiv.css("background-image", "url(/images/Bribes.jpg)");
 			}
 			else if(homeDiv.attr('data-complaint') ===  'Tar Sands'){
-				return homeDiv.css("background-image", "url(images/TarSands.jpg)");
+				return homeDiv.css("background-image", "url(/images/TarSands.jpg)");
 			}
 			else if(homeDiv.attr('data-complaint') ===  'Animals'){
 				return homeDiv.css("background-image", animalImgs[rando]);
 			}
 		};
+
+		$(".homeDiv").on("click", function(e){
+			localStorage.clear();
+			// var image = $(this).attr("style");
+			localStorage.setItem("instaName", "@" + compName);
+			localStorage.setItem("instaLink", instaLink);
+			localStorage.setItem("image", "background-image:" + formerImage);
+		});
 
 }); // Closing the whole $ready function

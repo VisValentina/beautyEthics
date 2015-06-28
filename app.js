@@ -72,6 +72,7 @@ var express = require('express'),
     // *************** BRAND INFO ***************//
     // var brandIds = [196766934, 448044564, 1323766664, 887391878, 182211878, 18977415, 326928838, 144140774, 260742208, 1385709710, 459676149, 145628278, 19262530, 469275009, 1273842973];
     var brandIds;
+    var compIds;
 
 		// *************** DEAL WITH LOGIN AND SIGNUP ***************//
 
@@ -98,8 +99,15 @@ var express = require('express'),
 
     app.get('/logout', function(req, res){
     req.logout();
+    // req.session.destroy(); this didn't work
     res.redirect('/');
     });
+    // This didn't work either
+    // app.get('/logout', function (req, res){
+    //   req.session.destroy(function (err) {
+    //   res.redirect('/'); //Inside a callback… should be bulletproof!
+    // });
+    // });
 
 
     // *************** THE ROUTES ***************//
@@ -119,14 +127,18 @@ var express = require('express'),
         var brandData = JSON.parse(body).data[0];
         var instaName = brandData.user.username;
         var imgData = brandData.images.standard_resolution.url;
+        var instaLink = brandData.link;
+        console.log(instaLink);
         var complaint;
+        var ownerNum;
 
         brandIds.forEach(function(el){
           if(el.instaName === '@' + instaName) {
             complaint = el.complaint;
+            ownerNum = el.owner;
           }
         });
-        responseArr.push({imgData: imgData, instaName: instaName, complaint: complaint});
+        responseArr.push({imgData: imgData, instaName: instaName, complaint: complaint, ownerNum: ownerNum, instaLink: instaLink});
         if (responseCount === 8) {
           res.render('brands/index', {images: responseArr});
         }
@@ -145,6 +157,20 @@ var express = require('express'),
 	  });
 
 
+    app.get('/brands/:id', function(req,res){
+      db.Company.findById(req.params.id).populate('brands').exec(function(err,company){
+        // brand.instaId has all the data we want
+        // let's use request
+        // console.log(company.brands[0].instaId)
+        // request.get("https://api.instagram.com/v1/users/" + company.brands[0].instaId + "/media/recent/?access_token=" + req.user.accessToken, function(err,response,data){
+        //   var testing = JSON.parse(data)
+        //   var images = testing.images
+        //   console.log(images)
+          res.render("brands/show", {company:company});
+        });
+        
+      // });
+    });
 
 
 
@@ -167,12 +193,10 @@ app.listen(3000, function(){
 
   db.Brand.find({}, function(error, data){
     brandIds = data;
-    console.log(brandIds);
-  });
-  // db.Brand.find({}, "instaId", function(error, data){
-  //   data.forEach(function(instaId) {
-  //     // brandIds.push(instaId["instaId"]);
-  //     brandIds.push(instaId);
-  //   });
     // console.log(brandIds);
+  });
+    db.Company.find({}, function(error, data){
+    compIds = data;
+    // console.log(compIds);
+  });
 });
