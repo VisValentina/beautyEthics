@@ -3,7 +3,8 @@ var mongoose = require("mongoose");
 var companySchema = new mongoose.Schema({
   name: String,
   score: Number,
-  text: String,
+  text: [String],
+  controversies: [String],
   brands: [{
                       type: mongoose.Schema.Types.ObjectId,
                       ref: "Brand" 

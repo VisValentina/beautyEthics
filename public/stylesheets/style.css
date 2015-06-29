@@ -92,7 +92,8 @@ h1 {
 	top: 50px;
 	font-family: 'Raleway', sans-serif;
 	font-size: 11px;
-	letter-spacing: 2px
+	letter-spacing: 2px;
+	text-decoration: none
 }
 
 .aboutText {
@@ -119,7 +120,7 @@ p .dropCap {
   font-size: 50px;
   float: left;
   line-height: 40px;
-  padding-right: 8px;
+  padding-right: 3px;
 }
 
 .hoverInfo {
@@ -129,7 +130,7 @@ p .dropCap {
 	line-height:	1.6;
 	letter-spacing: 1.5px;
 	font-size: 13px;
-	top: -50px;
+	top: -64px;
 	position: relative;
 }
 
@@ -151,6 +152,21 @@ p .dropCap {
 	margin: auto;
 }
 
+.homeCitation {
+	font-family: Bodoni, serif;
+  font-style: italic;
+  font-size: 30px;
+}
+
+.homeCitationReg {
+	font-family: 'Raleway', sans-serif;
+	font-style: normal;
+	letter-spacing: 2.5px;
+	font-size: 10px;
+	text-transform: uppercase;
+/*	color: white;*/
+}
+
 /* FOR THE SHOW PAGE */
 * {
   box-sizing: border-box; }
@@ -160,9 +176,12 @@ header {
   background: yellow;
   min-height: 100vh;
   display: flex;
+  align-items: center;
+  justify-content: center;
 	box-shadow: inset 0px 0px 0 2000px rgba(0,0,0,0.75);
 	background-size: 100% 100%;
 	position: relative;
+	cursor: pointer;
 	}
 
 header h1 {
@@ -178,12 +197,25 @@ footer {
   margin-top: 60px;
   margin-bottom: 3em; }
 
-.scoreText {
+#scoreText {
+/*	position: absolute;
+	left: 46%,
+	top: 30%;*/
 	font-family: 'Raleway', sans-serif;
-	line-height:	1.6;
+/*	line-height:	1.6;*/
 	letter-spacing: 2.5px;
 	font-size: 11px;
 	color: white;
+}
+
+div#scoreTextDiv {
+	/*position: absolute;*/
+	/*left: 46%,*/
+	/*top: 30%;*/
+/*	width: 150%;
+	height: 100%*/
+	margin-bottom: 50px;
+	text-align: center;
 }
 
 .smallScore {
@@ -200,13 +232,14 @@ footer {
 
 #instaName {
 	text-transform: uppercase;
-	text-align: center
+	text-align: center;
+/*	padding-left: 30px;*/
 }
 
 .bottomRight {
 	position: absolute;
-	bottom: 35px;
-	right: 50px;
+	bottom: 25px;
+	right: 35px;
 	color: white
 }
 
@@ -217,6 +250,8 @@ footer {
 	letter-spacing: 2px;
 	text-decoration: none;
 	position: absolute;
+	left: 1%;
+	top: 2%;
 	left: 25px;
 }
 
@@ -251,3 +286,42 @@ footer p {
   text-transform: none;
 }
 
+a.linkMe {
+    display: block;
+    /*height: 100%;*/
+    /*width: 100%;*/
+    text-decoration: none;
+}
+
+.citations {
+	font-family: Bodoni, serif;
+  font-style: italic;
+  font-size: 23px;
+  letter-spacing: 2px;
+}
+
+p .citationsArgs {
+	font-family: 'Raleway', sans-serif;
+	font-size: 11px;
+	letter-spacing: 2px;
+	line-height: 200%;
+}
+
+.em {
+	font-style: italic;
+	color: white;
+	font-size: 16px
+}
+
+.compShowName {
+	font-family: 'Raleway', sans-serif;
+	line-height:	1.6;
+	letter-spacing: 2.5px;
+	font-size: 14px;
+	color: white;
+	padding-bottom: 20px;
+}
+
+.ethical {
+	float: left;
+}
